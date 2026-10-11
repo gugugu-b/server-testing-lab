@@ -1,0 +1,52 @@
+# ---- 凭据与密钥：严禁提交 ----
+# 注意：.gitignore 只对尚未提交的文件生效。
+# 凭据一旦进入 Git 历史，必须假定已泄露并立即吊销/轮换。
+*.env
+*.env.*
+!*.env.example
+credentials*
+*credential*
+*secret*
+*password*
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+id_rsa*
+id_dsa*
+id_ecdsa*
+id_ed25519*
+
+# ---- 测试产物：含 SN、拓扑、账号信息，体积大且敏感 ----
+logs/
+log/
+test_log/
+SAT_logs/
+*.log
+*.log.*
+!*.log.example
+
+# ---- 固件与工具包：不入库，按版本从内部仓库取 ----
+*.bin
+*.fw
+*.rpm.deps
+firmware/
+
+# ---- 抓包与导出数据 ----
+*.pcap
+*.pcapng
+*.har
+
+# ---- 编辑器与 IDE ----
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ---- Office 临时文件 ----
+~$*
+.~lock.*

@@ -1,0 +1,28 @@
+# 统一换行符与编码，避免跨平台反复产生无意义 diff。
+# 本仓库曾在「修复学习计划文档编码格式」提交中处理过同类问题，
+# 这里固定规则，防止 BOM / CRLF 再次混入。
+
+# 默认：按文本处理，仓库内统一 LF，检出时不转换
+*               text=auto eol=lf
+
+# 文档：强制 UTF-8（无 BOM）+ LF
+*.md            text eol=lf working-tree-encoding=UTF-8
+.gitignore      text eol=lf
+.gitattributes  text eol=lf
+
+# 脚本：必须 LF，且不可在仓库中被 CRLF 污染
+*.sh            text eol=lf
+
+# 二进制资源：不做换行符转换
+*.xlsx          binary
+*.docx          binary
+*.pptx          binary
+*.pdf           binary
+*.png           binary
+*.jpg           binary
+*.rpm           binary
+*.deb           binary
+*.bin           binary
+*.fw            binary
+*.iso           binary
+*.pcap          binary
